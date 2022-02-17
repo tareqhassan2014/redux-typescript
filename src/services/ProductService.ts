@@ -1,7 +1,7 @@
 import requests from './httpService';
 
 class ProductService {
-    getProducts(): Promise<IProduct[]> {
+    getAllProducts(): Promise<IProduct[]> {
         return requests.get('/product');
     }
 

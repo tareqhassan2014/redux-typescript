@@ -1,11 +1,9 @@
-import Contacts from '../components/Contacts';
-import { Counter } from '../features/counter/Counter';
+import FeatureProducts from '../components/home/FeatureProducts';
 
 const Home = () => {
     return (
         <div>
-            <Contacts />
-            <Counter />
+            <FeatureProducts />
         </div>
     );
 };

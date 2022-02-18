@@ -15,21 +15,10 @@ interface IProduct {
     url: string;
     wholePrice: string;
     __v: number;
-    _id?: string;
+    _id: string;
 }
 
 interface IFeature {
     description: string;
     value: string;
-}
-
-interface IStore {
-    _id?: string;
-    name: string;
-    category: string;
-    description: string;
-    store: string;
-    price: number;
-    image: string;
-    _v: number;
 }

@@ -19,7 +19,3 @@ export const clearCart = () => {
         type: ActionTypes.CLEAR_CART,
     };
 };
-
-export type cartActionType =
-    | ReturnType<typeof removeFromCart>
-    | ReturnType<typeof addToCart>;

@@ -1,59 +1,29 @@
 import { Button, Container, Grid, Rating, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import { useEffect, useState } from 'react';
+import { useCallback } from 'react';
+import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { instance } from '../../services/httpService';
-
-type StatusType = 'idle' | 'pending' | 'success' | 'error';
+import useAsync from '../../hooks/useAsync';
+import { addToCart } from '../../redux/actions/cartAction';
+import ProductService from '../../services/ProductService';
 
 const ProductDetail = () => {
     let { _id } = useParams();
-    const [data, setData] = useState<IProduct>({} as IProduct);
-    const [status, setStatus] = useState<StatusType>('idle');
 
-    console.log(data);
-
-    const { price, name, img, category, star, features } = data;
-
-    const defaultProduct = {
-        category: '',
-        createdAt: '',
-        features: [],
-        img: '',
-        name: '',
-        price: 0,
-        priceFraction: '',
-        seller: '',
-        shipping: 0,
-        star: 0,
-        starCount: 0,
-        stock: 0,
-        updatedAt: '',
-        url: '',
-        wholePrice: '',
-        __v: 0,
-        _id: '',
-    };
-
-    useEffect(() => {
-        setData(defaultProduct);
-        setStatus('pending');
-        instance
-            .get('/product/' + _id)
-            .then((res) => {
-                setData(res.data.data);
-                setStatus('success');
-            })
-            .catch((err) => {
-                setData(defaultProduct);
-                setStatus('error');
-            });
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+    const getProduct = useCallback(() => {
+        return ProductService.getProductBuyID(_id!);
     }, [_id]);
+
+    const { data, isSuccess } = useAsync<IProduct>(getProduct);
+
+    const { name, img, features, price, category, star } = (data ||
+        {}) as IProduct;
+
+    const dispatch = useDispatch();
 
     return (
         <Container>
-            {status === 'success' && (
+            {isSuccess && (
                 <Grid
                     container
                     direction="row"
@@ -103,7 +73,11 @@ const ProductDetail = () => {
                                 my: 3,
                             }}
                         >
-                            <Button size="large" color="primary">
+                            <Button
+                                size="large"
+                                color="primary"
+                                onClick={() => dispatch(addToCart(data!))}
+                            >
                                 ADD TO CARD
                             </Button>
                             <Button size="large" color="primary">

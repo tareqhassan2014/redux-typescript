@@ -22,3 +22,11 @@ interface IFeature {
     description: string;
     value: string;
 }
+
+interface IAuthData {
+    name: string;
+    email: string;
+    role: string;
+    _id: string;
+    token: string;
+}

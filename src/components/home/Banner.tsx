@@ -4,6 +4,7 @@ const Banner = () => {
     return (
         <div>
             This is banner section.
+            I am going to add some more features.
         </div>
     );
 };

@@ -1,21 +1,17 @@
 import { ActionTypes } from './actionTypes';
 
-export const addToCart = (payload: IProduct) => {
-    return {
-        type: ActionTypes.ADD_TO_CART,
-        payload,
-    };
-};
+interface AddToCard {
+    type: ActionTypes.ADD_TO_CART;
+    payload: IProduct;
+}
 
-export const removeFromCart = (payload: string) => {
-    return {
-        type: ActionTypes.REMOVE_FROM_CART,
-        payload,
-    };
-};
+interface RemoveFromCart {
+    type: ActionTypes.REMOVE_FROM_CART;
+    payload: string;
+}
 
-export const clearCart = () => {
-    return {
-        type: ActionTypes.CLEAR_CART,
-    };
-};
+interface ClearCart {
+    type: ActionTypes.CLEAR_CART;
+}
+
+export type CartAction = AddToCard | RemoveFromCart | ClearCart;

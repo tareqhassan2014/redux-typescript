@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ResponsiveAppBar from './components/common/ResponsiveAppBar';
+import Checkout from './pages/Checkout';
 import ProductDetail from './pages/ProductDetail';
 
 const Home = React.lazy(() => import('./pages/Home'));
@@ -14,6 +15,7 @@ const AppRouter = () => {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/contact" element={<Contact />} />
+                    <Route path="/checkout" element={<Checkout />} />
                     <Route path="/product/:_id" element={<ProductDetail />} />
                 </Routes>
             </Suspense>

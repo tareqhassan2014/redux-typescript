@@ -1,6 +1,7 @@
-import { Action, ActionTypes } from '../actions/actionTypes';
+import { ActionTypes } from '../actions/actionTypes';
+import { CartAction } from '../actions/cartAction';
 
-const cartReducer = (state: IProduct[] = [], action: Action) => {
+const cartReducer = (state: IProduct[] = [], action: CartAction) => {
     switch (action.type) {
         case ActionTypes.ADD_TO_CART: {
             return [...state, action.payload];

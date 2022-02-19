@@ -3,9 +3,12 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { addToCart } from '../../redux/actions/cartActionCreator';
 
 const ProductCart = ({ product }: { product: IProduct }) => {
+    const dispatch = useDispatch();
     const { _id, name, price, img } = product;
     return (
         <Card sx={{ maxWidth: 345 }}>
@@ -21,7 +24,11 @@ const ProductCart = ({ product }: { product: IProduct }) => {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button size="small" color="primary">
+                <Button
+                    size="small"
+                    color="primary"
+                    onClick={() => dispatch(addToCart(product))}
+                >
                     ADD TO CARD
                 </Button>
                 <Typography

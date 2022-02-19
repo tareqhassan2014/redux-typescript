@@ -4,7 +4,7 @@ import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import useAsync from '../hooks/useAsync';
-import { addToCart } from '../redux/actions/cartAction';
+import { addToCart } from '../redux/actions/cartActionCreator';
 import ProductService from '../services/ProductService';
 
 const ProductDetail = () => {

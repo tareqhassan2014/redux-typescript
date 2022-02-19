@@ -14,7 +14,7 @@ import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AppState } from '../../redux/store/store';
 
 const pages = [
@@ -25,6 +25,7 @@ const pages = [
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ResponsiveAppBar = () => {
+    let navigate = useNavigate();
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
         null
     );
@@ -145,14 +146,12 @@ const ResponsiveAppBar = () => {
                     <Box sx={{ flexGrow: 0 }}>
                         <IconButton
                             size="large"
-                            aria-label="show 17 new notifications"
+                            aria-label="show new notifications"
                             color="inherit"
+                            sx={{ mx: 1 }}
+                            onClick={() => navigate('/checkout')}
                         >
-                            <Badge
-                                badgeContent={cart.length}
-                                color="error"
-                                sx={{ mx: 1 }}
-                            >
+                            <Badge badgeContent={cart.length} color="error">
                                 <ShoppingCartIcon />
                             </Badge>
                         </IconButton>

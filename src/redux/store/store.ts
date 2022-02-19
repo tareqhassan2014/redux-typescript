@@ -6,6 +6,6 @@ const rootReducer = combineReducers({
     cart: cartReducer,
 });
 
-const store = createStore(rootReducer, composeWithDevTools());
+export const store = createStore(rootReducer, composeWithDevTools());
 
-export default store;
+export type AppState = ReturnType<typeof rootReducer>;

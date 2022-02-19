@@ -3,9 +3,9 @@ import { Box } from '@mui/system';
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import useAsync from '../../hooks/useAsync';
-import { addToCart } from '../../redux/actions/cartAction';
-import ProductService from '../../services/ProductService';
+import useAsync from '../hooks/useAsync';
+import { addToCart } from '../redux/actions/cartAction';
+import ProductService from '../services/ProductService';
 
 const ProductDetail = () => {
     let { _id } = useParams();

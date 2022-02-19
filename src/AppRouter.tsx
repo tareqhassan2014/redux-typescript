@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ResponsiveAppBar from './components/common/ResponsiveAppBar';
-import ProductDetail from './components/productDetail/ProductDetail';
+import ProductDetail from './pages/ProductDetail';
 
 const Home = React.lazy(() => import('./pages/Home'));
 const Contact = React.lazy(() => import('./pages/Contact'));

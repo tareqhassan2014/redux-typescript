@@ -1,5 +1,7 @@
 ## E-commerce-With-redux&typescript
 
+Visit the site from the following link:  
+
 # The services you will get from the website:
 * The website is an E-commerce website.
 * There is a huge collection of products with the details of the products.

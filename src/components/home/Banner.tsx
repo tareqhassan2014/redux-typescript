@@ -83,7 +83,7 @@ function SwipeableTextMobileStepper() {
                                     display: 'block',
                                     minWidth: 400,
                                     overflow: 'hidden',
-                                    width: '100%',
+                                    maxWidth: '100%',
                                 }}
                                 src={step.imgPath}
                                 alt={step.label}

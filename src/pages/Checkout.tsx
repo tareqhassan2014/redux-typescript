@@ -10,7 +10,10 @@ import {
 } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { clearCart, removeFromCart } from '../redux/actions/cartActionCreator';
+import {
+    clearCart,
+    removeFromCart,
+} from '../redux/actionCreator/cartActionCreator';
 import { AppState } from '../redux/store/store';
 
 const Checkout = () => {

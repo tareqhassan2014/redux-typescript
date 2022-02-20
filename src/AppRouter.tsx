@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Loading from './components/common/Loading';
 import ResponsiveAppBar from './components/common/ResponsiveAppBar';
 import Checkout from './pages/Checkout';
 import ProductDetail from './pages/ProductDetail';
@@ -11,7 +12,7 @@ const AppRouter = () => {
     return (
         <BrowserRouter>
             <ResponsiveAppBar />
-            <Suspense fallback={<div>Loading......</div>}>
+            <Suspense fallback={<Loading />}>
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/contact" element={<Contact />} />

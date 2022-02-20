@@ -1,25 +1,12 @@
 import requests from './httpService';
 
 class AuthService {
-    getAllProducts(): Promise<IProduct[]> {
-        return requests.get('/product');
+    Login(body: { email: string; password: string }): Promise<IAuthData> {
+        return requests.post('/auth/login', body);
     }
 
-    getProductBuyID(id: string): Promise<IProduct> {
-        return requests.get(`/product/${id}`);
-    }
-
-    addProduct(body: IProduct): Promise<IProduct> {
-        return requests.post('/product', body);
-    }
-
-    updateProduct(id: string, body: IProduct): Promise<IProduct> {
-        return requests.patch(`/product/${id}`, body);
-    }
-
-    deleteProduct(id: string): Promise<IProduct> {
-        return requests.delete(`/product/${id}`);
+    logout(): Promise<any> {
+        return requests.get('/auth/logout');
     }
 }
-
 export default new AuthService();

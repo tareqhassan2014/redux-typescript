@@ -1,7 +1,7 @@
 import { Container, Grid, Typography } from '@mui/material';
 import useAsync from '../../hooks/useAsync';
 import ProductService from '../../services/ProductService';
-import ProductCart from './ProductCart';
+import ProductCart from '../common/ProductCart';
 
 const FeatureProducts = () => {
     const { data: products } = useAsync(ProductService.getAllProducts);

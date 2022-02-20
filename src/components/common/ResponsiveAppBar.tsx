@@ -149,7 +149,7 @@ const ResponsiveAppBar = () => {
                             aria-label="show new notifications"
                             color="inherit"
                             sx={{ mx: 1 }}
-                            onClick={() => navigate('/checkout')}
+                            onClick={() => cart.length && navigate('/checkout')}
                         >
                             <Badge badgeContent={cart.length} color="error">
                                 <ShoppingCartIcon />

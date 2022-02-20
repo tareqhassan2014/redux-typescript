@@ -1,7 +1,7 @@
 import Lottie from 'react-lottie';
-import animationData from '../assets/animation-json/lottie-login.json';
+import animationData from '../../assets/animation-json/lottie-loader.json';
 
-const Contact = () => {
+const Loading = () => {
     const defaultOptions = {
         loop: true,
         autoplay: true,
@@ -18,4 +18,4 @@ const Contact = () => {
     );
 };
 
-export default Contact;
+export default Loading;

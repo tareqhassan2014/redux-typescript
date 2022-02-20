@@ -5,7 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { addToCart } from '../../redux/actions/cartActionCreator';
+import { addToCart } from '../../redux/actionCreator/cartActionCreator';
 
 const ProductCart = ({ product }: { product: IProduct }) => {
     const dispatch = useDispatch();

@@ -1,5 +1,9 @@
 export enum ActionTypes {
-    ADD_TO_CART = 'ADD_TO_CART',
-    REMOVE_FROM_CART = 'REMOVE_FROM_CART',
-    CLEAR_CART = 'CLEAR_CART',
+    ADD_TO_CART = 'add_to_cart',
+    REMOVE_FROM_CART = 'remove_from_cart',
+    CLEAR_CART = 'clear_cart',
+    LOGIN_PENDING = 'login/pending',
+    LOGIN_SUCCESS = 'login/success',
+    LOGIN_ERROR = 'login/error',
+    LOGOUT = 'logout',
 }

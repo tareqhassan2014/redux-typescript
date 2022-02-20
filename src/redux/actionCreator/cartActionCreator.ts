@@ -1,5 +1,5 @@
-import { ActionTypes } from './actionTypes';
-import { CartAction } from './cartAction';
+import { ActionTypes } from '../actions/actionTypes';
+import { CartAction } from '../actions/cartAction';
 
 export const addToCart = (payload: IProduct): CartAction => {
     return {

@@ -20,9 +20,12 @@ const Checkout = () => {
     return (
         <Container sx={{ my: 3 }}>
             <Typography variant="h5">Shopping Cart</Typography>
-            <Grid container>
+            <div className='row '>
+                <div className='col-md-8 col-sm-12'>
+                <Grid container>
                 {cart.map((product) => (
-                    <Grid item key={product._id}>
+ 
+                         <Grid item key={product._id}>
                         <Grid container alignItems="center">
                             <Grid item xs={1}>
                                 <img
@@ -32,7 +35,7 @@ const Checkout = () => {
                                 />
                             </Grid>
                             <Grid item xs={10} sx={{ px: 5 }}>
-                                <Typography>{product.name}</Typography>
+                                <Typography>{product.name.slice(0, 30)}</Typography>
                             </Grid>
                             <Grid item xs={1}>
                                 <IconButton
@@ -53,6 +56,8 @@ const Checkout = () => {
                     </Grid>
                 ))}
             </Grid>
+                </div>
+            </div>
             <Grid container direction="row-reverse" sx={{ mt: 2, mb: 5 }}>
                 <Grid item>
                     <Button

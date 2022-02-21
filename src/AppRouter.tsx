@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ResponsiveAppBar from './components/common/ResponsiveAppBar';
 import Checkout from './pages/Checkout';
 import ProductDetail from './pages/ProductDetail';
+import Navbar from './components/common/Navbar';
+
 
 const Home = React.lazy(() => import('./pages/Home'));
 const Contact = React.lazy(() => import('./pages/Contact'));
@@ -17,6 +19,7 @@ const AppRouter = () => {
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/checkout" element={<Checkout />} />
                     <Route path="/product/:_id" element={<ProductDetail />} />
+                    <Route path="/Navbar" element={<Navbar></Navbar>} />
                 </Routes>
             </Suspense>
         </BrowserRouter>

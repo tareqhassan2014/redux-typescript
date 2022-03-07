@@ -1,9 +1,9 @@
-/* import { ActionTypes } from '../actions/actionTypes';
+import { ActionTypes } from '../actions/actionTypes';
 import { AuthAction } from '../actions/authAction';
 
 interface IAuthState {
     data: IAuthData | null;
-    status: 'idle' | 'pending' | ' success' | 'error';
+    status: 'idle' | 'pending' | 'success' | 'error';
     error: null | string;
 }
 
@@ -16,7 +16,7 @@ const initialState: IAuthState = {
 const authReducer = (
     state: IAuthState = initialState,
     action: AuthAction
-): IAuthData | null => {
+): IAuthState => {
     switch (action.type) {
         case ActionTypes.LOGIN_PENDING: {
             return {
@@ -34,10 +34,14 @@ const authReducer = (
         }
         case ActionTypes.LOGIN_ERROR: {
             return {
-                data: action.payload,
+                data: null,
                 status: 'error',
-                error: null,
+                error: action.payload,
             };
+        }
+
+        case ActionTypes.LOGOUT: {
+            return initialState;
         }
 
         default: {
@@ -47,6 +51,3 @@ const authReducer = (
 };
 
 export default authReducer;
- */
-const load = 'dsd';
-export default load;

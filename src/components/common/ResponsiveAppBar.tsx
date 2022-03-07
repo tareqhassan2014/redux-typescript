@@ -13,9 +13,8 @@ import Toolbar from '@mui/material/Toolbar';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
-import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { AppState } from '../../redux/store/store';
+import useData from '../../hooks/useData';
 
 const pages = [
     { title: 'Home', link: '/' },
@@ -48,7 +47,8 @@ const ResponsiveAppBar = () => {
         setAnchorElUser(null);
     };
 
-    const cart = useSelector((state: AppState) => state.cart);
+    // const cart = useSelector((state: AppState) => state.cart);
+    const cart = useData('cart');
 
     return (
         <AppBar position="static">

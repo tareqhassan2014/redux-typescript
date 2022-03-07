@@ -8,7 +8,7 @@ interface loginPendingAction {
     type: ActionTypes.LOGIN_PENDING;
 }
 interface loginErrorAction {
-    type: ActionTypes.LOGIN_SUCCESS;
+    type: ActionTypes.LOGIN_ERROR;
     payload: string;
 }
 
